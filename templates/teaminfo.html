@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #20232A;
+            color: #FFF;
+            padding: 0 5%;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .team-member {
+            background-color: #282C34;
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-info h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1DB954;
+        }
+
+        .team-info p {
+            font-size: 16px;
+            color: #AAA;
+            margin-bottom: 8px;
+        }
+
+        .team-info .role {
+            font-weight: 700;
+            color: #FFF;
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1DB954;
+            border-radius: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #AAA;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Meet Our Team</h1>
+
+    <div class="team-container">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <div class="team-info">
+                <h3>Chaitanya Bhadriraju</h3>
+                <p>Roll No: 216Q1A4395</p>
+                <p>Branch: CSE_AI</p>
+                <p class="role">Project Lead</p>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <div class="team-info">
+                <h3>Amara N S V R Balaji</h3>
+                <p>Roll No: 216Q1A4399</p>
+                <p>Branch: CSE_AI</p>
+                <p class="role">Frontend Developer</p>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+            <div class="team-info">
+                <h3>Prakash</h3>
+                <p>Roll No: 216Q1A43A4</p>
+                <p>Branch: CSE_AI</p>
+                <p class="role">Backend Developer</p>
+            </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-member">
+            <div class="team-info">
+                <h3>Sai Ram</h3>
+                <p>Roll No: 216Q1A4398</p>
+                <p>Branch: CSE_AI</p>
+                <p class="role">Data Collection</p>
+            </div>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="team-member">
+            <div class="team-info">
+                <h3>Venkat sai</h3>
+                <p>Roll No: 216Q1A4382</p>
+                <p>Branch: CSE_AI</p>
+                <p class="role">PPT and Doc preparation</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-size: cover;
+        }
+
+        .upload-form {
+            background: rgba(34, 34, 34, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 400px;
+        }
+
+        .upload-form:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #29b6f6, #ff6f61);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 30px;
+            border: none;
+            border-radius: 8px;
+            background: #2c2c2c;
+            color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            background-color: #3b3b3b;
+        }
+
+        .submit-button {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #29b6f6, #ff6f61);
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.4s, box-shadow 0.4s;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #ff6f61, #29b6f6);
+            box-shadow: 0 10px 20px rgba(41, 182, 246, 0.6);
+        }
+
+        .submit-button:active {
+            transform: scale(0.98);
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #29b6f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        a:hover {
+            background-color: #0288d1;
+            transform: translateY(-4px);
+        }
+    </style>
+    <script>
+        function validateFileType() {
+            const fileInput = document.getElementById('file-input');
+            const filePath = fileInput.value;
+            const allowedExtensions = /(\.mp3|\.wav)$/i;
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type. Please upload an mp3 or wav audio file.');
+                fileInput.value = ''; // Clear the file input
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="upload-form">
+        <h1>Upload Your Music File 🎵</h1>
+        <form action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data" onsubmit="return validateFileType()">
+            <input type="file" name="file" id="file-input" required>
+            <br>
+            <button type="submit" class="submit-button">Upload</button>
+            <a href="{{ url_for('home') }}">Back to home</a>
+        </form>
+    </div>
+</body>
+</html>

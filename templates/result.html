@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: linear-gradient(135deg, #1f1f1f, #333);
+            padding: 30px; /* Reduced padding to match upload container */
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px; /* Reduced max-width to match upload container */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            font-size: 32px; /* Reduced font size to match the upload container */
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #e3f2fd);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 24px; /* Reduced font size for consistency */
+            font-weight: 400;
+            margin-top: 20px;
+            color: #ff9800;
+        }
+        span {
+            font-weight: 700;
+            color: #ffb74d;
+        }
+        audio {
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 10px; /* Reduced border-radius to match */
+            outline: none;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #29b6f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        a:hover {
+            background-color: #0288d1;
+            transform: translateY(-4px);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <audio controls>
+            <source src="{{ url_for('static', filename='audio/' + filename) }}" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <h2>Predicted Genre: <span>{{ genre }}</span></h2>
+        <a href="{{ url_for('index') }}">Back to Upload</a>
+    </div>
+</body>
+</html>
